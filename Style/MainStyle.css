@@ -6,4 +6,11 @@ body
 {
     width: 225px;
     height: 225px;
+    background-color: brown;
+}
+header
+{
+    text-align: center;
+    /* margin-top: 25px; */
+    padding-top: 50px;
 }
