@@ -1,0 +1,42 @@
+#info{
+    background-color: hotpink;
+    width: auto;
+}
+#indexPic{
+    max-height: 500px;
+    width: auto;
+}
+
+#centeredHeaderText {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;  
+}
+
+#facebookPage{
+    height: 45px;
+    width: 150px;
+    position: relative;
+    /* border: 3px solid green;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); */
+}
+
+.centerButton{
+    text-align: center;
+}
+
+.headerCenter{
+    text-align: center;
+}
+
+.textAlign{
+    padding: 10px;
+}

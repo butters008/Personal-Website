@@ -1,6 +1,9 @@
 body
 {
-    background-color: aquamarine;
+    /* background-color: black; */
+    background-color: white;
+    margin: 0px;
+
 }
 .sectionInfo
 {
@@ -12,5 +15,14 @@ header
 {
     text-align: center;
     /* margin-top: 25px; */
-    padding-top: 50px;
+    /* padding-top: 50px; */
+    max-height: 500px;
+    background-color: hotpink;
+}
+main
+{
+    width: 60%;
+    background-color: green;
+    /* background-color: white; */
+    margin: auto;
 }
