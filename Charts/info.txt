@@ -1,0 +1,49 @@
+This is for info only - not for display
+
+The new idea for thie website will help cement my php knowledge.
+I will use this website as a project tracker, that of what I am working on in ICS370, but for my own personal use.
+If there is anything that I do use from that class that the other two worked on, I will give credit where credit is due.
+That goes on for the same for anything I pull from youtube.
+
+Just give credit where credit is due.
+If I need to, I will make a page of credit - what helped with what type of deal.
+
+The idea for index
+The index will have the overview of what project I am working on
+----------------------------------------------------------------------
+
+(NOT SURE HOW - Somehow implement a hour tracker for project)
+
+|Name of Project: Money Planner App for Mobile                         |
+|Status: Pre-Production                                                |
+|----------------------------------------------------------------------|
+|-------------------|------------------|------------------|------------|
+|        may        |       june       |        july      |         aug|
+|----------------------------------------------------------------------|
+|   3   4   5   2   |   3   4   5   2  |   3   4   5   2  |   3   4   5|
+|   w1  w2  w3  w4  |   w1  w2  w3  w4 |   w1  w2  w3  w4 |   w1  w2  w|
+|---------------------------|------------------------------------------|
+|Technology and Code:       |Reason: This is a app to help people keep |
+|Andriod Studio             |track of money someone spends per week and|
+|Andriod Phone              |will let the user know if they are        |
+|Java                       |spending to much that wk                  |
+|Koltin                     |                                          |
+|XML                        |                                          |
+|SQL                        |                                          |
+|----------------------------------------------------------------------|
+
+Dev Update (date): This is where I write a quick update as to what I am
+working on with the project.  If this is in BETA, I will list patch notes
+as to what has been updates as well.  
+
+        -------------------------------------------------------
+
+Dev Update (date): This will be an older post about what I the project. 
+You can think of this as a blog kind of.
+
+        -------------------------------------------------------
+
+Dev Update (date): An even older update, if page allows this to be shown.
+
+                            show all
+                            
