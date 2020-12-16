@@ -9,14 +9,25 @@
 </head>
 <body>
     <header class="basic">
-
+        <h1 style="text-align: center; padding-top: 50px;">The Butterfield</h1>
     </header>
     <nav>
         <ul class="navbar basic">
             <li class="navItem"><a href="index.php">Home</a></li>
             <li class="navItem"><a href="#projects">Projects</a></li>
-            <li class="navItem"><a href="#aboutMe">About Me</a></li>
-            <li class="navItem"><a href="#contact">Contact Me</a></li>
-            <li class="navItem account"><a href="#login/sign up">Profile</a></li>
+            <?php 
+                if (isset($_SESSION["useruid"])){
+                    echo '
+                    <li class="navItem account"><a href="#login/sign up">Profile</a></li>                    
+                    ';
+                }
+                else {
+                    echo '
+                    <li class="navItem account"><a href="#login/sign up">Log In</a></li>
+                    <li class="navItem account"><a href="#login/sign up">Sign Up</a></li>
+                    ';
+                }
+            ?>
+
         </ul>
     </nav>

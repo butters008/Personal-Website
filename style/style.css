@@ -1,5 +1,5 @@
-body
-{
+/* Genral layout and color scheme of the webpage */
+body {
     /* background-color: black; */
     background-color: rgb(46, 46, 46);
     margin: 0px;
@@ -7,7 +7,7 @@ body
 
 }
 
-.basic{
+.basic {
     width: 60%;
     background-color: rgb(167, 167, 167);
     margin: auto;
@@ -22,3 +22,13 @@ main
 {
     min-height: 20%;
 }
+
+/* This is for the progress bar on index page - taken from W3Schools */
+#myBar {
+    width: 10%;
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 30px; /* To center it vertically */
+    color: white;
+  }
