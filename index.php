@@ -3,18 +3,22 @@
 ?>
 
 <main class="basic">
+  <br>
+    <!-- Seeding the data for right now, work on connecting to DB later -->
+    <h2 style="text-align: center;"><?php echo "Personal Website"; //project name?></h2>
+    <h3><?php echo "Front-end and Back-end (Isn't this Full-Stack?) Development"; //project type ?></h3>
+    <p><?php echo "This is where text for the current project will go"; //project descrption ?></p>      
 
-    <section><br>
+
+
         <!-- This is where my current project will be, and give a road map (or slice of road map) of said project -->
-        <div id="myProgress">
+        
+        <!-- <div id="myProgress">
             <div id="myBar">10%</div>
-        </div>
-        <div>
-            <h3>Current project</h3>
-            <p>This is where text for the current project will go</p>      
-        </div>
-    </section>
-
+        </div> -->
+        
+        <!-- Might have a bar graph in here as well -->
+        
 </main>
 
 

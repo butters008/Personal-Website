@@ -7,21 +7,28 @@ body {
 
 }
 
-.basic {
-    width: 60%;
-    background-color: rgb(167, 167, 167);
-    margin: auto;
-}
-
 header
 {
     text-align: center;
     height: 20%;
 }
+
 main
 {
+    /* In-case of no content on page */
     min-height: 20%;
 }
+
+.basic {
+    width: 60%;
+    background-color: rgb(167, 167, 167);
+    margin: auto;
+    /* padding: 15px; */
+}
+
+
+
+
 
 /* This is for the progress bar on index page - taken from W3Schools */
 #myBar {
