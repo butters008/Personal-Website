@@ -9,8 +9,13 @@
     <h3><?php echo "Front-end and Back-end (Isn't this Full-Stack?) Development"; //project type ?></h3>
     <p><?php echo "This is where text for the current project will go"; //project descrption ?></p>      
 
-
-
+    <!-- We are going to try something here - iterative so this might go -->
+    <!-- Left would be project info -->
+    <div id="leftBlock"></div>
+    <!-- Right would be project graphs -->
+    <div id="rightBlock"></div>
+    <!-- Below would be recent updates -->
+    <div id="bottomBlock"></div>
         <!-- This is where my current project will be, and give a road map (or slice of road map) of said project -->
         
         <!-- <div id="myProgress">
