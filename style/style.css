@@ -34,14 +34,17 @@ main
     height: 200px;
     background-color: red;
     float: left;
+    margin: auto;
 }
 #rightBlock{
     width: 40%;
     height: 200px;
     background-color: turquoise;
     float: right;
+    margin: auto;
 }
 #bottomBlock{
+    width: 100%;
     /* width: 40%; */
     height: 200px;
     background-color: green;

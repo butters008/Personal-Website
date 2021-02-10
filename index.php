@@ -13,7 +13,7 @@
     <!-- Left would be project info -->
     <div id="leftBlock"></div>
     <!-- Right would be project graphs -->
-    <div id="rightBlock"></div>
+    <div id="rightBlock"></div><br>
     <!-- Below would be recent updates -->
     <div id="bottomBlock"></div>
         <!-- This is where my current project will be, and give a road map (or slice of road map) of said project -->
