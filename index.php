@@ -5,25 +5,23 @@
 <main class="basic">
   <br>
     <!-- Seeding the data for right now, work on connecting to DB later -->
+    <!-- This will be moved to the about me page -->
     <h2 style="text-align: center;"><?php echo "Personal Website"; //project name?></h2>
     <h3><?php echo "Front-end and Back-end (Isn't this Full-Stack?) Development"; //project type ?></h3>
     <p><?php echo "This is where text for the current project will go"; //project descrption ?></p>      
 
-    <!-- We are going to try something here - iterative so this might go -->
-    <!-- Left would be project info -->
-    <div id="leftBlock"></div>
-    <!-- Right would be project graphs -->
-    <div id="rightBlock"></div><br>
-    <!-- Below would be recent updates -->
-    <div id="bottomBlock"></div>
-        <!-- This is where my current project will be, and give a road map (or slice of road map) of said project -->
-        
-        <!-- <div id="myProgress">
-            <div id="myBar">10%</div>
-        </div> -->
-        
-        <!-- Might have a bar graph in here as well -->
-        
+    <div class="currentProjectOutline">
+      <!-- Hard coded test values, will be loading this in dynamically -->
+      <h3>Project Money Timeline</h3>
+      <p>This is going to contain a small description of the project</p>
+    </div>
+    <br><br>
+    <div class="currentProjectBlog">
+      <h3>Blog title</h3>
+      <h5>date of blog</h5>
+      <p>This will have the entire blog text, not matter how much text there is</p>
+    </div>
+
 </main>
 
 

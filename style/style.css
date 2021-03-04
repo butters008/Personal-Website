@@ -26,31 +26,19 @@ main
     /* padding: 15px; */
 }
 
-
-/* This is going to be the layout for index - hardcoding for now */
-/* ------------------------------------------------------------- */
-#leftBlock{
-    width: 40%;
-    height: 200px;
-    background-color: red;
-    float: left;
+.currentProjectOutline{
+    min-height: 20px;
+    border: solid;
+    width: 85%;
     margin: auto;
 }
-#rightBlock{
-    width: 40%;
-    height: 200px;
-    background-color: turquoise;
-    float: right;
+
+.currentProjectBlog{
+    min-height: 20px;
+    border: solid;
+    width: 85%;
     margin: auto;
 }
-#bottomBlock{
-    width: 100%;
-    /* width: 40%; */
-    height: 200px;
-    background-color: green;
-}
-/* ------------------------------------------------------------- */
-
 
 /* This is for the progress bar on index page - taken from W3Schools */
 #myBar {
