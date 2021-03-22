@@ -4,24 +4,22 @@
 
 <main class="basic">
   <br>
-    <!-- Seeding the data for right now, work on connecting to DB later -->
-    <!-- This will be moved to the about me page -->
-    <h2 style="text-align: center;"><?php echo "Personal Website"; //project name?></h2>
-    <h3><?php echo "Front-end and Back-end (Isn't this Full-Stack?) Development"; //project type ?></h3>
-    <p><?php echo "This is where text for the current project will go"; //project descrption ?></p>      
-
+    <h2 style="text-align: center;">Current Project</h2>
     <div class="currentProjectOutline">
       <!-- Hard coded test values, will be loading this in dynamically -->
-      <h3>Project Money Timeline</h3>
-      <p>This is going to contain a small description of the project</p>
+      <h3><strong>Project Name:</strong> <?php echo"Mobile Money"; ?></h3>
+      <p><strong>Short Discription</strong>
+        <?php echo "Temp seeded data: This is going to contain a small description of the project "; ?>
+      </p>
     </div>
     <br><br>
+    <h2 style="text-align: center;">Project Updates</h2>
     <div class="currentProjectBlog">
       <h3>Blog title</h3>
       <h5>date of blog</h5>
       <p>This will have the entire blog text, not matter how much text there is</p>
     </div>
-
+    <br>
 </main>
 
 
