@@ -7,7 +7,7 @@
     <h2 style="text-align: center;">Current Project</h2>
     <div class="currentProjectOutline">
       <!-- Hard coded test values, will be loading this in dynamically -->
-      <h3><strong>Project Name:</strong> <?php echo"Mobile Money"; ?></h3>
+      <h3><strong>Project Name:</strong> <?php echo"Linux Working through VSCode!"; ?></h3>
       <p><strong>Short Discription</strong>
         <?php echo "Temp seeded data: This is going to contain a small description of the project "; ?>
       </p>
