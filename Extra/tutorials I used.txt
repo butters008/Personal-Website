@@ -1,0 +1,11 @@
+This is was taken from the index page for the progress bar
+
+<!-- 
+    This spot is for potential ideas for website
+    - https://www.w3schools.com/howto/howto_css_modals.asp - this is for a button for quick summany of projects
+    - Adding a graph line or bar as progress tracker
+    - Adding a timeline/roadmap for website
+        - https://www.w3schools.com/howto/howto_css_timeline.asp
+        - https://www.w3schools.com/howto/howto_js_progressbar.asp 
+
+ -->

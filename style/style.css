@@ -31,6 +31,57 @@ main
     border: solid;
     width: 85%;
     margin: auto;
+    /* padding: 15px; */
+}
+
+.currentProjectOutline img{
+    height: 32px;
+    border-right: solid;
+    border-bottom: solid;
+    width: 32px;
+    margin: auto;
+    float: left;
+    padding: 10px;
+    background-color: black;
+}
+
+.currentProjectOutline h3{
+    height: 32px;
+    /* border-right: solid; */
+    border-bottom: solid;
+    border-color: black;
+    /* width: 32px; */
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: black;
+    color: whitesmoke;
+    /* vertical-align: auto; */
+    align-items: center;
+}
+
+.currentProjectOutline .myProgress{
+    height: 32px;
+    width: 100%;
+    background-color: #ddd;
+    /* border-right: solid; */
+    /* border-bottom: solid; */
+    /* width: 32px; */
+    margin: auto;
+    float: right;
+    /* padding: 10px; */
+}
+
+.currentProjectOutline .myBar{
+    height: 32px;
+    width: 15%;
+    background-color: #039127;
+    /* border-right: solid; */
+    /* border-bottom: solid; */
+    /* width: 32px; */
+    margin: auto;
+    float: left;
+    /* padding: 10px; */
 }
 
 .currentProjectBlog{

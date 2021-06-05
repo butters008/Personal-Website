@@ -6,6 +6,8 @@
     <title>The Butterfield</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/nav.css">
+    <!-- This is for debug, will make this appear and disappear later -->
+    <link rel="stylesheet" href="style/debug.css">
 </head>
 <body>
     <header class="basic">
