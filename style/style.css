@@ -1,6 +1,5 @@
 /* Genral layout and color scheme of the webpage */
 body {
-    /* background-color: black; */
     background-color: rgb(46, 46, 46);
     margin: 0px;
     font-family: Arial;
@@ -23,15 +22,14 @@ main
     width: 60%;
     background-color: rgb(167, 167, 167);
     margin: auto;
-    /* padding: 15px; */
 }
 
 .currentProjectOutline{
     min-height: 20px;
-    border: solid;
+    /* border: solid; */
+    border-bottom: solid;
     width: 85%;
     margin: auto;
-    /* padding: 15px; */
 }
 
 .currentProjectOutline img{
@@ -47,16 +45,13 @@ main
 
 .currentProjectOutline h3{
     height: 32px;
-    /* border-right: solid; */
     border-bottom: solid;
     border-color: black;
-    /* width: 32px; */
     margin: auto;
     padding: 10px;
     text-align: center;
     background-color: black;
     color: whitesmoke;
-    /* vertical-align: auto; */
     align-items: center;
 }
 
@@ -64,39 +59,36 @@ main
     height: 20px;
     width: 100%;
     background-color: #ddd;
-    /* border-right: solid; */
-    /* border-bottom: solid; */
-    /* width: 32px; */
     margin: auto;
     float: right;
-    /* padding: 10px; */
+}
+
+.currentProjectOutline table{
+    margin: auto;
+}
+
+.currentProjectOutline label{
+    padding-left: 5px;
+    padding-bottom: 5px;
 }
 
 .currentProjectOutline .myBar{
     height: 20px;
-    width: 15%;
     background-color: #039127;
-    /* border-right: solid; */
-    /* border-bottom: solid; */
-    /* width: 32px; */
     margin: auto;
     float: left;
-    /* padding: 10px; */
 }
 
 .currentProjectBlog{
-    min-height: 20px;
-    border: solid;
     width: 85%;
     margin: auto;
 }
 
-/* This is for the progress bar on index page - taken from W3Schools */
-#myBar {
-    width: 10%;
-    height: 30px;
-    background-color: #4CAF50;
-    text-align: center; /* To center it horizontally (if you want) */
-    line-height: 30px; /* To center it vertically */
-    color: white;
-  }
+#blogTitle{
+    height: 40px;
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+    justify-items: center;
+    padding-top: 10px;
+}
