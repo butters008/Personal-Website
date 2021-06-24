@@ -20,9 +20,13 @@
     //Grabbing Data
     $sql = "SELECT * FROM projects;";
     $result = mysqli_query($conn, $sql);
-    $project = mysqli_fetch_assoc($result);
-    mysqli_free_result($result);
-    mysqli_close($conn);
+    $resultCheck = mysqli_num_rows($result);
+    $sql_moreInfo = "SELECT * FROM projects_more_info;";
+    $result2 = mysqli_query($conn, $sql);
+    // $resultCheck = mysqli_num_rows($result);
+
+    // mysqli_free_result($result);
+    // mysqli_close($conn);
     
     //Testing the query
     if (!$result){
@@ -33,6 +37,30 @@
 </section>
 
 <main class="basic">
+    <table class="projectList">
+      <thead>
+        <tr>
+          <th>Project Status:</th>
+          <th>Project Name:</th>
+          <th>Project Type:</th>
+          <!-- <th>Project Start Date:</th> -->
+        </tr>
+      </thead>
+      <tbody>
+      <?php
+      if ($resultCheck > 0){
+        while ($project = mysqli_fetch_assoc($result)){
+          echo "<tr>";
+          echo '<td><a href="project_info.php?project_id=">'.$project["project_status"]."</td>";
+          echo "<td>".$project["project_name"]."</td>";
+          echo "<td>".$project["project_type"]."</td>";
+          // echo "<td>".$project["project_start"]."</td>";
+          echo "</tr>";
+        }
+      }
+    ?>      
+      </tbody>
+    </table>
 
 
 </main>
