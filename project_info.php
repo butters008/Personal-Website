@@ -124,11 +124,9 @@
 
 
     <h2 style="text-align: center; margin-bottom: none;">Recent Project Update</h2>
-    <h5 style="text-align: center;">click here for project page</h5>
     <div class="currentProjectBlog">
 <?php
     if ($project_blog_rows > 0){
-        echo "Working inside IF";
         while ($project_blog = mysqli_fetch_assoc($result3)){
            echo '
            <h3 id="blogTitle"'.$project_blog["blog_title"].'</h3>
@@ -141,9 +139,6 @@
     </div>
     <br>
 </main>
-
-
-
 
 <?php
   include "helper/footer.php";

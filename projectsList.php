@@ -51,8 +51,8 @@
       if ($resultCheck > 0){
         while ($project = mysqli_fetch_assoc($result)){
           echo "<tr>";
-          echo '<td><a href="project_info.php?project_id=">'.$project["project_status"]."</td>";
-          echo "<td>".$project["project_name"]."</td>";
+          echo '<td><a href="project_info.php?project_id='.$project["project_id"].'">'.$project["project_status"]."</td>";
+          echo '<td><a href="project_info.php?project_id='.$project["project_id"].'">'.$project["project_name"].'</td>';
           echo "<td>".$project["project_type"]."</td>";
           // echo "<td>".$project["project_start"]."</td>";
           echo "</tr>";
