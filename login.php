@@ -1,0 +1,32 @@
+<?php 
+    include "helper/header.php";
+?>
+
+<main class="basic">
+  <br>
+    <h2 style="text-align: center;">Login</h2>
+    <div class="currentProjectOutline">
+        <form action="includes/login.inc.php" method="post">
+            <label for="email">Email</label>
+            <input type="text" name="email" placeholder="Email" required><br>
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <button type="submit" name="submit">submit</button><br>
+        </form>
+    </div>
+</main>
+
+<?php
+  if(isset($_GET["error"])){
+    if($_GET["error"] == "emptyInput"){
+      echo "<p>Fill in all fields</p>";
+    }
+    else if($_GET["error"] == "wrongLogin"){
+      echo "<p>Incorrect Login Information</p>";
+    }
+  }
+?>
+
+<?php
+  include "helper/footer.php";
+?>

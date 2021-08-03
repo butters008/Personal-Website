@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,15 +23,14 @@
             <li class="navItem"><a href="projectsList.php">Projects</a></li>
             <li class="navItem"><a href="#aboutMe">About Me</a></li>
             <?php 
-                if (isset($_SESSION["useruid"])){
+                if (isset($_SESSION["userID"])){
                     echo '
-                    <li class="navItem account"><a href="#login/sign up">Logout</a></li>                    
-                    <li class="navItem account"><a href="#contact">Contact Me</a></li>
+                    <li class="navItem account"><a href="includes/logout.inc.php">Logout</a></li>                    
                     ';
                 }
                 else {
                     echo '
-                    <li class="navItem account"><a href="#login/sign up">Log In</a></li>
+                    <li class="navItem account"><a href="login.php">Log In</a></li>
                     <li class="navItem account"><a href="#contact">Contact Me</a></li>
                     ';
                 }
