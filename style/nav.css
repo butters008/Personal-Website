@@ -27,3 +27,17 @@
     float: right;
 }
 
+.projectMenu{
+    width: 5rem;
+    height: 25rem;
+    position: fixed;
+    float: left;
+    background-color: blue;
+}
+
+.navItem img {
+    float: left;
+    max-height: 32px;
+    max-width: 132px;
+}
+

@@ -31,7 +31,7 @@
                 else {
                     echo '
                     <li class="navItem account"><a href="login.php">Log In</a></li>
-                    <li class="navItem account"><a href="#contact">Contact Me</a></li>
+                    <li class="navItem account"><a href="signup.php">Sign Up</a></li>
                     ';
                 }
                 // <li class="navItem account"><a href="#login/sign up">Sign Up</a></li>

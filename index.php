@@ -50,7 +50,6 @@
   <br>
     <h2 style="text-align: center;">Current Project</h2>
     <div class="currentProjectOutline">
-      <a href="signup.php">Signup</a>
       <!-- Hard coded test values, will be loading this in dynamically -->
       <img src="Images/webDev.png" alt="Web Development"><!-- TODO: Get images to load dynamically -->
       <h3><strong>Project Name:</strong> <?php echo $project['project_name']; ?></h3>

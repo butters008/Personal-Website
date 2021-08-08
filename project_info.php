@@ -1,49 +1,36 @@
 <?php 
     include "helper/header.php";
+    include_once "includes/dbh.inc.php";
 
     //This is for connecting to the local DB
     //Make the connection seperate later on
-    $conn = mysqli_connect("localhost", "root", "", "butterfield");
+    // $conn = mysqli_connect("localhost", "root", "", "butterfield");
 
+    //Setting up the information to showcase the project on the webpage
     if(isset($_GET['project_id'])){
-
-		$id = mysqli_real_escape_string($conn, $_GET['project_id']);
-
-
-		// $sql = "SELECT * FROM projects WHERE projects.project_id = $id";
-
-
-        $sql = "SELECT * FROM projects WHERE project_id = $id;";
-        $result = mysqli_query($conn, $sql);
-        $project = mysqli_fetch_assoc($result);
-        mysqli_free_result($result);
-        $progressBar = $project["project_percentage"];
-        $sql_otherTable = "SELECT * FROM projects_more_info WHERE project_id = $id;";
-        $result = mysqli_query($conn, $sql_otherTable);
-        $project_moreInfo = mysqli_fetch_assoc($result);
-        mysqli_free_result($result);
-        $sql_blog = "SELECT * FROM projects_blog WHERE project_id = $id ORDER BY blog_id DESC;";
-        $result3 = mysqli_query($conn, $sql_blog);
-        // $project_blog = mysqli_fetch_assoc($result);
-        $project_blog_rows = mysqli_num_rows($result3);
-        // mysqli_free_result($result);
-        // echo $project_blog_rows;
+  		$id = mysqli_real_escape_string($conn, $_GET['project_id']);
+      $sql = "SELECT * FROM projects WHERE project_id = $id;";
+      $result = mysqli_query($conn, $sql);
+      $project = mysqli_fetch_assoc($result);
+      mysqli_free_result($result);
+      $progressBar = $project["project_percentage"];
+      $sql_otherTable = "SELECT * FROM projects_more_info WHERE project_id = $id;";
+      $result = mysqli_query($conn, $sql_otherTable);
+      $project_moreInfo = mysqli_fetch_assoc($result);
+      mysqli_free_result($result);
+      $sql_blog = "SELECT * FROM projects_blog WHERE project_id = $id ORDER BY blog_id DESC;";
+      $result3 = mysqli_query($conn, $sql_blog);
+      // $project_blog = mysqli_fetch_assoc($result);
+      $project_blog_rows = mysqli_num_rows($result3);
 
 
-        // mysqli_close($conn);
+      //Closing the connection to the DB
+      mysqli_close($conn);
 
-    // mysqli_free_result($result);
-    // mysqli_close($conn);
-
-        // get the query result
-		// $result = mysqli_query($conn, $sql);
-
-		// fetch result in array format
-		// $project = mysqli_fetch_assoc($result);
-
-		// mysqli_free_result($result);
-		// mysqli_close($conn);
-
+      //Checking to see if the user is logged in or not
+      if (isset($_SESSION["userID"])){
+        header("location: /Personal-Website/project_edit.php?project_id=$id");
+      }
 		function make_links_clickable($text){
 			return preg_replace('!(((f|ht)tp(s)?://)[-a-zA-Zа-яА-Я()0-9@:%_+.~#?&;//=]+)!i', '<a href="$1">$1</a>', $text);
 		}
@@ -53,35 +40,6 @@
   }
 
 ?>
-
-<!-- This is for any debug message to appear on one area of the screen and trying to make this easier...I hope -->
-<section id="debug">
-  <?php 
-    //Testing the connection
-    // if ($conn){
-    //   echo "connected";
-    // }else{
-    //   echo "not connected";
-    // }
-    
-    //Grabbing Data
-    // $sql = "SELECT * FROM projects;";
-    // $result = mysqli_query($conn, $sql);
-    // $resultCheck = mysqli_num_rows($result);
-    // $sql_moreInfo = "SELECT * FROM projects_more_info;";
-    // $result2 = mysqli_query($conn, $sql);
-    // $resultCheck = mysqli_num_rows($result);
-
-    // mysqli_free_result($result);
-    // mysqli_close($conn);
-    
-    //Testing the query
-    // if (!$result){
-    //   echo "SQL Statement FAILED";
-      // die("Query FAILED" . mysqli_error());
-    // }
-  ?>
-</section>
 
 <main class="basic">
 <br>
