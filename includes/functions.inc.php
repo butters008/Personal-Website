@@ -119,6 +119,7 @@ function loginUser($conn, $email, $pwd){
 }
 
 function updateProject(){
+    // $sql = "UPDATE `projects_more_info` SET `project_id`='[value-1]',`project_shortInfo`='[value-2]',`project_longInfo`='[value-3]',`project_start`='[value-4]',`project_end`='[value-5]' WHERE 1";
     $sql = "INSERT INTO user (username, email, pwd) VALUES (?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
 

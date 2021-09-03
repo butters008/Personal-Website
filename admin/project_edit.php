@@ -51,6 +51,16 @@
           <tr>
             <th class="infoDisplayed">Project Information</th>
             <th class="infoDisplayed">Project Data (Displayed)</th>
+
+<!-- 
+*****************
+TODO - I will break this table into multiple forms so I can chess my out of this,
+        by making basic project info have one inc, more info table have a different inc and ect ect
+
+*****************
+ -->
+
+
           </tr>
           <!-- STATUS -->
           <!-- TODO - going to nest these together, it makes since atm this is for future implementation -->
