@@ -1,21 +1,20 @@
 <?php 
     include "helper/header.php";
+    include_once "includes/dbh.inc.php";
 
     //This is for connecting to the local DB
-    //Make the connection seperate later on
-    $conn = mysqli_connect("localhost", "root", "", "butterfield");
+    // $conn = mysqli_connect("localhost", "root", "", "butterfield");
 
 ?>
 
-<!-- This is for any debug message to appear on one area of the screen and trying to make this easier...I hope -->
 <section id="debug">
   <?php 
     //Testing the connection
-    if ($conn){
-      echo "connected";
-    }else{
-      echo "not connected";
-    }
+    // if ($conn){
+    //   echo "connected";
+    // }else{
+    //   echo "not connected";
+    // }
     
     //Grabbing Data
     //I might have to do some joins and redo this part to make it better

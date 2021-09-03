@@ -90,6 +90,7 @@ function emptyInputLogin($email, $pwd){
 
 function loginUser($conn, $email, $pwd){
     $emailExist = emailExist($conn, $email);
+    $admin = "admin";
 
     if($emailExist == false){
         header("location: ../login.php?error=wrongEmail");
@@ -105,9 +106,14 @@ function loginUser($conn, $email, $pwd){
     }
     else if($checkPwd === true){
         session_start();
-        $_SESSION["userID"] = $emailExist["user_id"];
-        // $_SESSION["username"] = $emailExist["username"];
-        header("location: ../index.php?info=successful-login");
+        if(strcmp($emailExist["user_role"], $admin) !== 0){
+            $_SESSION["member"] = $emailExist["user_id"];
+            header("location: ../index.php?info=successful-login");
+        }
+        else{
+            $_SESSION["admin"] = $emailExist["user_id"];
+            header("location: ../admin/projectList_admin.php");
+        }
     }
 
 }

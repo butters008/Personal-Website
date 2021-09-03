@@ -33,12 +33,11 @@
 
 <nav class="projectMenu">
     <ul class="menubar-nav">
-
         <li class="nav-item">
             <img src="Images/editProject.jpg" alt="Image for Project Edit" 
             style="max-height: 32px;
                 max-width: 32px;">
-            <a href="#update-project.php" class="item-link"> Project Details</a>
+            <a href="#update-project.php" class="item-link">Update Project</a>
         </li>
         <li class="nav-item">
             <a href="#add-blog.php" class="item-link">Add Blog Post</a>
@@ -65,34 +64,39 @@
     //Checking to see if the user is logged in or not
     if (isset($_SESSION["userID"])){
     ?>
-    <!-- TODO: Get images to load dynamically - Will have to look this up! -->
-    <img src="Images/webDev.png" alt="Web Development">
-    <h3><input type="text" name="name" placeholder="Name" required> </h3>
-    <!-- This was taken from tutorial previously mentioned -->
-    <!-- Hard coding this in, will probably have to re-work this in the future -->
-    <br>
-    <label>Percentage of Completion: <?php echo $project["project_percentage"]."%";?></label> 
-    <br>
-    <div class="myProgress">
-    <div class="myBar" style="width: <?php echo $project["project_percentage"]; ?>%;"></div>
-    </div><br><br>
 
-    <table>
-    <tr>
-        <td>Project Type:</td>
-        <td><strong><?php echo $project["project_type"]?></strong></td>
-    </tr>
-    <tr>
-        <td>Project Start:</td>
-        <td><strong><?php echo $project_moreInfo["project_start"]?></strong></td>
-    </tr>
-    </table>
-    
-    <p><strong>Short Discription:</strong><br><br>
-    <?php echo $project_moreInfo["project_shortInfo"]; ?>
-    </p>
-    <br>
-    </div><br><br>
+    <form action="includes/updatePorject.inc.php" method="post">
+        <!-- TODO: Get images to load dynamically - Will have to look this up! -->
+        <img src="Images/webDev.png" alt="Web Development">
+        <h3><input type="text" name="name" placeholder="Name" required> </h3>
+        <!-- This was taken from tutorial previously mentioned -->
+        <!-- Hard coding this in, will probably have to re-work this in the future -->
+        <br>
+        <label>Percentage of Completion: <?php echo $project["project_percentage"]."%";?></label> 
+        <br>
+        <div class="myProgress">
+            <div class="myBar" style="width: <?php echo $project["project_percentage"]; ?>%;"></div>
+        </div>
+        <br><br>
+        <table>
+            <tr>
+                <td>Project Type:</td>
+                <td><strong><?php echo $project["project_type"]?></strong></td>
+            </tr>
+            <tr>
+                <td>Project Start:</td>
+                <td><strong><?php echo $project_moreInfo["project_start"]?></strong></td>
+            </tr>
+        </table>
+        
+        <p><strong>Short Discription:</strong><br><br>
+            <?php echo $project_moreInfo["project_shortInfo"]; ?>
+        </p>
+        <br>
+    </form> <!-- END OF FORM -->
+</div><!-- END OF PROJECT INFO --> 
+
+<br><br>
     <h2 style="text-align: center; margin-bottom: none;">Recent Project Update</h2>
     <div class="currentProjectBlog">
 <?php

@@ -6,13 +6,16 @@
   <br>
     <h2 style="text-align: center;">Login</h2>
     <div class="currentProjectOutline">
+      <div class="loginSection">
         <form action="includes/login.inc.php" method="post">
-            <label for="email">Email</label>
-            <input type="text" name="email" placeholder="Email" required><br>
-            <label for="password">Password</label>
-            <input type="password" name="password" placeholder="Password" required><br>
-            <button type="submit" name="submit">submit</button><br>
-        </form>
+              <label for="email" class="loginSection-only">Email</label>
+              <input type="text" name="email" placeholder="Email" required><br><br>
+              <label for="password" class="loginSection-only">Password</label>
+              <input type="password" name="password" placeholder="Password" required><br><br><br>
+              <button type="submit" name="submit">submit</button><br>
+          </form>
+
+      </div>
     </div>
 </main>
 

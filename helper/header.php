@@ -10,6 +10,8 @@
     <title>The Butterfield</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/nav.css">
+    <link rel="stylesheet" href="style/loginSection.css">
+    <link rel="stylesheet" href="style/signupSection.css">
     <!-- This is for debug, will make this appear and disappear later -->
     <link rel="stylesheet" href="style/debug.css">
 </head>
@@ -21,10 +23,11 @@
         <ul class="navbar basic">
             <li class="navItem"><a href="index.php">Home</a></li>
             <li class="navItem"><a href="projectsList.php">Projects</a></li>
-            <li class="navItem"><a href="#aboutMe">About Me</a></li>
+            <li class="navItem"><a href="aboutMe.php">About Me</a></li>
             <?php 
-                if (isset($_SESSION["userID"])){
+                if(isset($_SESSION["member"])){
                     echo '
+                    <li class="navItem account"><a href="includes/logout.inc.php">MEMBER</a></li>                    
                     <li class="navItem account"><a href="includes/logout.inc.php">Logout</a></li>                    
                     ';
                 }
