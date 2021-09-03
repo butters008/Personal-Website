@@ -1,4 +1,52 @@
-/* Genral layout and color scheme of the webpage */
+/* NAVIGATION - BEGIN -  */
+.navbar 
+{
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    width: 60%;
+    margin: auto;
+
+}
+
+.navItem {
+    float: left;
+}
+  
+.navItem a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+.navItem a:hover {
+    background-color: #111;
+}
+
+.account{
+    float: right;
+}
+
+.projectMenu{
+    width: 5rem;
+    height: 25rem;
+    position: fixed;
+    float: left;
+    background-color: teal;
+}
+
+.navItem img {
+    float: left;
+    max-height: 32px;
+    max-width: 132px;
+}
+/* NAVIGATION - END -  */
+
+
+/* General CSS */
 body {
     background-color: rgb(46, 46, 46);
     margin: 0px;
@@ -9,7 +57,14 @@ body {
 header
 {
     text-align: center;
-    height: 20%;
+    min-height: 10%;
+    padding-top: 5px;
+    background-color: rgb(167, 167, 167);
+
+}
+
+.headerText{
+    text-size-adjust: 22px;
 }
 
 main
@@ -18,7 +73,7 @@ main
     min-height: 20%;
 }
 
-.basic {
+.basicLayout {
     width: 60%;
     background-color: rgb(167, 167, 167);
     margin: auto;
@@ -111,5 +166,27 @@ main
 }
 
 
-/* Side bar navigation */
 
+
+
+
+#admin-projectOutline{
+    float: right;
+    background-color: aquamarine;
+    width: 70%;
+}
+
+#admin-projectOutline table{
+    text-align: center;
+    margin: auto;
+    /* padding: 1em; */
+}
+.infoDisplayed{
+    column-gap: 5;
+    padding: 1em;
+}
+
+.admin-projectDescription{
+    text-align: center;
+
+}

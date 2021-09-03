@@ -3,9 +3,6 @@
     include "../helper/admin-header.php";
     include_once "../includes/dbh.inc.php";
 
-    //This is for connecting to the local DB
-    //Make the connection seperate later on
-    // $conn = mysqli_connect("localhost", "root", "", "butterfield");
 
     //Setting up the information to showcase the project on the webpage
     if(isset($_GET['project_id'])){
@@ -25,16 +22,12 @@
       $project_blog_rows = mysqli_num_rows($result3);
 
 
-      //Closing the connection to the DB
-      mysqli_close($conn);
+
 
       //Checking to see if the user is logged in or not
       if (isset($_SESSION["userID"])){
         header("location: /Personal-Website/project_edit.php?project_id=$id");
       }
-		function make_links_clickable($text){
-			return preg_replace('!(((f|ht)tp(s)?://)[-a-zA-Zа-яА-Я()0-9@:%_+.~#?&;//=]+)!i', '<a href="$1">$1</a>', $text);
-		}
   }
   else{
       echo "Error loading page!";
@@ -42,64 +35,90 @@
 
 ?>
 
-<main class="basic">
+<main class="basicLayout">
 <br>
-    <h2 style="text-align: center;">Current Project</h2>
-    <div class="currentProjectOutline">
-      <!-- Hard coded test values, will be loading this in dynamically -->
-      <img src="Images/webDev.png" alt="Web Development"><!-- TODO: Get images to load dynamically -->
-      <h3><strong>Project Name:</strong> <?php echo $project['project_name']; ?></h3>
-      <!-- This was taken from tutorial previously mentioned -->
-      <!-- Hard coding this in, will probably have to re-work this in the future -->
-      <br>
-      <label>Percentage of Completion: <?php echo $project["project_percentage"]."%";?></label> 
-      <br>
-      <div class="myProgress">
-        <div class="myBar" style="width: <?php echo $project["project_percentage"]; ?>%;"></div>
-      </div>
-      <br>
-      <br>
-      <table>
-        <tr>
-          <td>Project Type:</td>
-          <td><strong><?php echo $project["project_type"]?></strong></td>
-        </tr>
-        <tr>
-          <td>Project Start:</td>
-          <td><strong><?php echo $project_moreInfo["project_start"]?></strong></td>
-        </tr>
-      </table>
+    
+    <div id="admin-projectOutline">
+
+ 
+    <!-- Going to have to break this up so that I can figure this out one by one -->
+
+    <form action="../includes/updateProject.php" method="post">
+    <h2 style="text-align: center;">Project Details &emsp;<input type="submit" value="Submit"></h2>
       
-      <p><strong>Short Discription:</strong><br><br>
-        <?php echo $project_moreInfo["project_shortInfo"]; ?>
-      </p>
-      <br>
-    </div>
-    <br><br>
+      <table>
+        <tbody>
+          <tr>
+            <th class="infoDisplayed">Project Information</th>
+            <th class="infoDisplayed">Project Data (Displayed)</th>
+          </tr>
+          <!-- STATUS -->
+          <!-- TODO - going to nest these together, it makes since atm this is for future implementation -->
+          <tr>
+            <td class="infoDisplayed">Project Status</td>
+            <td class="infoDisplayed"><input type="text" name="project_status" id="projectStatus" value="<?php echo $project['project_status']; ?>"></td>
+          </tr>
+          <!-- PERCENTAGE COMPLETED -->
+          <tr>
+            <td class="infoDisplayed">COMPLETION RATE</td>
+            <td class="infoDisplayed"><input type="text" name="project_percentage" id="projectPercentage" value="<?php echo $project["project_percentage"]."%";?>"></td>
+          </tr>
+          <!-- NAME -->
+          <tr>
+            <td class="infoDisplayed">Project Name</td>
+            <td class="infoDisplayed"><input type="text" name="project_name" id="projectName" value="<?php echo $project['project_name']; ?>"></td>
+          </tr>
+          <!-- TYPE -->
+          <tr>
+            <td class="infoDisplayed">Project Type</td>
+            <td class="infoDisplayed"><input type="text" name="project_type" id="projectType" value="<?php echo $project['project_type']; ?>"></td>
+          </tr>
+          <!-- START DATE -->
+          <tr>
+            <td class="infoDisplayed">START DATE</td>
+            <td class="infoDisplayed"><input type="text" name="project_start" id="projectStart" value="<?php echo $project_moreInfo["project_start"];?>"></td>
+          </tr>
+          <!-- END DATE  -->
+          <!-- TODO: Going to have to check to see if there is an end date (used placeholder and start date for now)-->
+          <tr>
+            <td class="infoDisplayed">END DATE</td>
+            <td class="infoDisplayed"><input type="text" name="project_start" id="projectStart" placeholder="<?php echo $project_moreInfo["project_start"];?>"></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="admin-projectDescription">
+        <h3>Short Discription:</h3>
+        <textarea name="project_short" id="projectShort" cols="50" rows="5" ><?php echo $project_moreInfo["project_shortInfo"];?></textarea>
+        <h3>Long Discription:</h3>
+        <textarea name="project_long" id="projectLong" cols="50" rows="10" ><?php echo $project_moreInfo["project_longInfo"];?></textarea>
+      </div>
+      <p><strong></strong><br><br>      
 
-    <!-- Thinking about doing a table in here, to make use to the entire width -->
-    <!-- Or make a UL list that can go vertically instead of horizantially -->
+
+    </form>
 
 
 
-    <h2 style="text-align: center; margin-bottom: none;">Recent Project Update</h2>
+
+    <!-- <h2 style="text-align: center; margin-bottom: none;">Recent Project Update</h2> -->
     <div class="currentProjectBlog">
 <?php
-    if ($project_blog_rows > 0){
-        while ($project_blog = mysqli_fetch_assoc($result3)){
-           echo '
-           <h3 id="blogTitle"'.$project_blog["blog_title"].'</h3>
-           <h5>'.$project_blog["blog_date"].'</h5>
-           <p>'.$project_blog["blog_text"];'.</p>';
-        echo "Working!";        
-        }
-      }
+    // if ($project_blog_rows > 0){
+    //     while ($project_blog = mysqli_fetch_assoc($result3)){
+    //        echo '
+    //        <h3 id="blogTitle"'.$project_blog["blog_title"].'</h3>
+    //        <h5>'.$project_blog["blog_date"].'</h5>
+    //        <p>'.$project_blog["blog_text"];'.</p>';
+    //     echo "Working!";        
+    //     }
+    //   }
 ?>
     </div>
     <br>
 </main>
 
 <?php
-  include "helper/footer.php";
+//Closing the connection to the DB
+mysqli_close($conn);
+include "../helper/footer.php";
 ?>
-

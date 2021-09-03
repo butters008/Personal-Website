@@ -1,7 +1,25 @@
 <?php 
-    // include "../helper/header.php";
-    include_once "../includes/dbh.inc.php";
-        include "../helper/admin-header.php";
+// include "../helper/header.php";
+include_once "../includes/dbh.inc.php";
+include "../helper/admin-header.php";
+
+//Grabbing Data
+$sql = "SELECT * FROM projects;";
+$result = mysqli_query($conn, $sql);
+$resultCheck = mysqli_num_rows($result);
+$sql_moreInfo = "SELECT * FROM projects_more_info;";
+$result2 = mysqli_query($conn, $sql);
+// $resultCheck = mysqli_num_rows($result);
+
+
+
+//Testing the query
+if (!$result){
+  echo "SQL Statement FAILED";
+  die("Query FAILED" . mysqli_error());
+}
+
+
 
 ?>
 
@@ -9,32 +27,17 @@
 <section id="debug">
   <?php 
     //Testing the connection
-    if ($conn){
-      echo "connected";
-    }else{
-      echo "not connected";
-    }
+    // if ($conn){
+    //   echo "connected";
+    // }else{
+    //   echo "not connected";
+    // }
     
-    //Grabbing Data
-    $sql = "SELECT * FROM projects;";
-    $result = mysqli_query($conn, $sql);
-    $resultCheck = mysqli_num_rows($result);
-    $sql_moreInfo = "SELECT * FROM projects_more_info;";
-    $result2 = mysqli_query($conn, $sql);
-    // $resultCheck = mysqli_num_rows($result);
 
-    // mysqli_free_result($result);
-    // mysqli_close($conn);
-    
-    //Testing the query
-    if (!$result){
-      echo "SQL Statement FAILED";
-      // die("Query FAILED" . mysqli_error());
-    }
   ?>
 </section>
 
-<main class="basic">
+<main class="basicLayout">
     <table class="projectList">
       <thead>
         <tr>
@@ -67,6 +70,10 @@
 
 
 <?php
-  include "../helper/footer.php";
-?>
 
+//Closing the DB
+mysqli_free_result($result);
+mysqli_close($conn);
+
+include "../helper/footer.php";
+?>
