@@ -51,16 +51,13 @@ body {
     background-color: rgb(46, 46, 46);
     margin: 0px;
     font-family: Arial;
-
 }
 
-header
-{
+header{
     text-align: center;
     min-height: 10%;
     padding-top: 5px;
     background-color: rgb(167, 167, 167);
-
 }
 
 .headerText{
@@ -148,33 +145,7 @@ main
     padding-top: 10px;
 }
 
-.projectList{
-    margin: auto;
-    text-align: center;
-    /* background-color: blue; */
-    padding-top: 25px;
-}
 
-.projectList thead{
-    background-color: black;
-    color: whitesmoke;
-}
-
-.projectList th{
-    padding-top: 25px;
-    padding-bottom: 25px;
-}
-
-
-
-
-
-
-#admin-projectOutline{
-    float: right;
-    background-color: aquamarine;
-    width: 70%;
-}
 
 #admin-projectOutline table{
     text-align: center;
@@ -190,3 +161,44 @@ main
     text-align: center;
 
 }
+
+
+/* This is for the project form - to make it look nice */
+#admin-projectOutline{
+    float: right;
+    background-color: white;
+    width: 70%;
+    border-top-style: solid;
+    border-top-width: 3em;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-bottom-width: 1em;
+    border-radius: 1em;
+
+}
+
+#optionsForAdmin{
+    width:20%;
+    float: left;
+    margin: auto;
+    background-color: blueviolet;
+}
+
+/* This is for projectList page */
+.projectList{
+    margin: auto;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.projectList thead{
+    background-color: black;
+    color: whitesmoke;
+}
+
+.projectList th{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
