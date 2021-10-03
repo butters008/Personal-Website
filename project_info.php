@@ -2,10 +2,6 @@
     include "helper/header.php";
     include_once "includes/dbh.inc.php";
 
-    //This is for connecting to the local DB
-    //Make the connection seperate later on
-    // $conn = mysqli_connect("localhost", "root", "", "butterfield");
-
     //Setting up the information to showcase the project on the webpage
     if(isset($_GET['project_id'])){
   		$id = mysqli_real_escape_string($conn, $_GET['project_id']);
@@ -24,9 +20,7 @@
       $project_blog_rows = mysqli_num_rows($result3);
 
 
-      //Closing the connection to the DB
-      mysqli_close($conn);
-
+    
       //Checking to see if the user is logged in or not
       if (isset($_SESSION["userID"])){
         header("location: /Personal-Website/project_edit.php?project_id=$id");
@@ -105,6 +99,8 @@ if(isset($_SESSION["member"])){ ?>
 </main>
 
 <?php
+  //Closing the connection to the DB
+  mysqli_close($conn);
   include "helper/footer.php";
 ?>
 
