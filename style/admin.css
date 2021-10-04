@@ -183,6 +183,11 @@ main
     float: left;
     margin: auto;
     background-color: blueviolet;
+    text-align: left;
+}
+
+#optionsForAdmin ul{
+    list-style-type: none;
 }
 
 /* This is for projectList page */
@@ -202,3 +207,28 @@ main
     padding-bottom: 25px;
 }
 
+.admin-list-header{
+    background-color: black;
+    color: blanchedalmond;
+    font-size: 21px;
+}
+
+.admin-list-button{
+    padding: 0;
+    overflow: hidden;
+    /* float: left; */
+    /* background-color: #333; */
+}
+
+.admin-list-button a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.adminSubmitButton{
+    margin: auto;
+    text-align: center;
+}

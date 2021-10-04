@@ -19,12 +19,11 @@
       // $project_blog = mysqli_fetch_assoc($result);
       $project_blog_rows = mysqli_num_rows($result3);
 
-
-    
       //Checking to see if the user is logged in or not
       if (isset($_SESSION["userID"])){
         header("location: /Personal-Website/project_edit.php?project_id=$id");
       }
+      
 		function make_links_clickable($text){
 			return preg_replace('!(((f|ht)tp(s)?://)[-a-zA-Zа-яА-Я()0-9@:%_+.~#?&;//=]+)!i', '<a href="$1">$1</a>', $text);
 		}
