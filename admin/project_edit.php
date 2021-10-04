@@ -96,10 +96,19 @@ else{
 
 <div id="optionsForAdmin">
   <ul>
-    <li>Option 1</li>
-    <li>Option 1</li>
-    <li>Option 1</li>
-    <li>Option 1</li>
+    <li class="admin-list-header">Project Options</li>
+    <ul>
+      <li class="admin-list-button"><?php echo'<a href="addblog.php?project_id='.$project["project_id"].'">';?>Add Blog</a></li>
+      <li class="admin-list-button"><?php echo'<a href="#addPictures.php?project_id='.$project["project_id"].'">';?>Add Pictures</a></li>
+      <li class="admin-list-button"><?php echo'<a href="bloglist.php?project_id='.$project["project_id"].'">';?>Blog List</a></li>
+    </ul>
+    <br>
+    <li class="admin-list-header">General Options</li>
+    <ul>
+      <li class="admin-list-button"><a href="admin_addproject.php">Add Project</a></li>
+      <li class="admin-list-button"><a href="#RemoveProject">Remove Project</a></li>
+    </ul>
+
   </ul>
 </div><!-- END - optionsForAdmin -->
 </div>

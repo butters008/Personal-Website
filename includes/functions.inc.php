@@ -137,3 +137,4 @@ function updateProject(){
     header("location: ../signup.php?error=none");
     exit();
 }
+
