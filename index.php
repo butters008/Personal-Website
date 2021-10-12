@@ -1,49 +1,30 @@
 <?php 
-    include "helper/header.php";
-    include_once "includes/dbh.inc.php";
+include "helper/header.php";
+include_once "includes/dbh.inc.php";
 
-    //This is for connecting to the local DB
-    // $conn = mysqli_connect("localhost", "root", "", "butterfield");
+//TODO: Will have to change this so it auto chooses from projects table in the 'projects_featured' column
+$sql = "SELECT * FROM projects WHERE project_id = 1;";
+$result = mysqli_query($conn, $sql);
+$project = mysqli_fetch_assoc($result);
+mysqli_free_result($result);
+$progressBar = $project["project_percentage"];
+$sql_otherTable = "SELECT * FROM projects_more_info WHERE project_id = 1;";
+$result = mysqli_query($conn, $sql_otherTable);
+$project_moreInfo = mysqli_fetch_assoc($result);
+mysqli_free_result($result);
+$sql_blog = "SELECT * FROM projects_blog WHERE project_id = 1 ORDER BY blog_id DESC;";
+$result = mysqli_query($conn, $sql_blog);
+$project_blog = mysqli_fetch_assoc($result);
+
+mysqli_free_result($result);
+
+//Testing the query
+if (!$result){
+  echo "SQL Statement FAILED";
+  die("Query FAILED" . mysqli_error());
+}
 
 ?>
-
-<section id="debug">
-  <?php 
-    //Testing the connection
-    // if ($conn){
-    //   echo "connected";
-    // }else{
-    //   echo "not connected";
-    // }
-    
-    //Grabbing Data
-    //I might have to do some joins and redo this part to make it better
-    //Or sending in data with a variable so that they all match up!
-    $sql = "SELECT * FROM projects WHERE project_id = 1;";
-    $result = mysqli_query($conn, $sql);
-    $project = mysqli_fetch_assoc($result);
-    mysqli_free_result($result);
-    $progressBar = $project["project_percentage"];
-    $sql_otherTable = "SELECT * FROM projects_more_info WHERE project_id = 1;";
-    $result = mysqli_query($conn, $sql_otherTable);
-    $project_moreInfo = mysqli_fetch_assoc($result);
-    mysqli_free_result($result);
-    $sql_blog = "SELECT * FROM projects_blog WHERE project_id = 1 ORDER BY blog_id DESC;";
-    $result = mysqli_query($conn, $sql_blog);
-    $project_blog = mysqli_fetch_assoc($result);
-
-
-    mysqli_free_result($result);
-
-    mysqli_close($conn);
-    
-    //Testing the query
-    if (!$result){
-      echo "SQL Statement FAILED";
-      // die("Query FAILED" . mysqli_error());
-    }
-  ?>
-</section>
 
 <main class="basic">
   <br>
@@ -78,6 +59,9 @@
       </p>
       <br>
     </div>
+    <div class="quickAboutMe">
+      <p>weijfrtbnewroujnf</p>
+    </div>
     <br><br>
 
     <!-- Thinking about doing a table in here, to make use to the entire width -->
@@ -85,7 +69,7 @@
 
 
 
-    <h2 style="text-align: center; margin-bottom: none;">Recent Project Update</h2>
+    <h2 style="text-align: center; margin-bottom: none; margin-top: 400px;">Recent Project Update</h2>
     <div class="currentProjectBlog">
       <h3 id="blogTitle"><?php echo $project_blog["blog_title"]; ?></h3>
       <h5><?php echo $project_blog["blog_date"]; ?></h5>
@@ -99,6 +83,7 @@
 
 <?php
   include "helper/footer.php";
+  mysqli_close($conn);
 ?>
 
 <script>

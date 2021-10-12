@@ -28,8 +28,9 @@ main
     min-height: 20px;
     /* border: solid; */
     border-bottom: solid;
-    width: 85%;
+    width: 65%;
     margin: auto;
+    float:right;
 }
 
 .currentProjectOutline img{
@@ -110,3 +111,10 @@ main
     padding-bottom: 25px;
 }
 
+.quickAboutMe{
+    min-height: 200px;
+    width: 20%;
+    float: left;
+    background-color: blue;
+    /* margin: auto; */
+}
