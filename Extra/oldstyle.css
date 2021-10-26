@@ -1,0 +1,111 @@
+/* Genral layout and color scheme of the webpage */
+body {
+    background-color: rgb(46, 46, 46);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    text-align: center;
+    height: 20%;
+}
+
+.basic {
+    width: 60%;
+    background-color: rgb(167, 167, 167);
+    margin: auto;
+}
+
+.currentProjectOutline{
+    min-height: 20px;
+    /* border: solid; */
+    border-bottom: solid;
+    width: 65%;
+    margin: auto;
+    /* float:right; */
+}
+
+.currentProjectOutline img{
+    height: 32px;
+    border-right: solid;
+    border-bottom: solid;
+    width: 32px;
+    margin: auto;
+    float: left;
+    padding: 10px;
+    background-color: black;
+}
+
+.currentProjectOutline h3{
+    height: 32px;
+    border-bottom: solid;
+    border-color: black;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: black;
+    color: whitesmoke;
+    align-items: center;
+}
+
+.myProgress{
+    height: 20px;
+    width: 100%;
+    background-color: #ddd;
+    margin: auto;
+    /* float: left; */
+}
+
+.currentProjectOutline table{
+    margin: auto;
+}
+
+.currentProjectOutline label{
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+.currentProjectOutline .myBar{
+    height: 20px;
+    background-color: #039127;
+    margin: auto;
+    float: left;
+}
+
+.currentProjectBlog{
+    width: 65%;
+    margin: auto;
+}
+
+#blogTitle{
+    height: 40px;
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+    justify-items: center;
+    padding-top: 10px;
+}
+
+.projectList{
+    margin: auto;
+    text-align: center;
+    /* background-color: blue; */
+    padding-top: 25px;
+}
+
+.projectList thead{
+    background-color: black;
+    color: whitesmoke;
+}
+
+.projectList th{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.quickAboutMe{
+    min-height: 200px;
+    width: 20%;
+    float: left;
+    background-color: blue;
+    /* margin: auto; */
+}

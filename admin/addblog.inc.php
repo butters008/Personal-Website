@@ -26,7 +26,7 @@ if(isset($_POST["submit"])){
     mysqli_stmt_bind_param($stmt, "sss", $projectID, $title, $blogTitle);
     mysqli_stmt_execute($stmt);
 
-    echo $stmt."<br>";
+    // echo $stmt."<br>";
     mysqli_stmt_close($stmt);
     // header("location: projectList_admin.php?=success");
 
