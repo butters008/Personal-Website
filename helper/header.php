@@ -11,34 +11,26 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/nav.css">
     <link rel="stylesheet" href="style/loginSection.css">
-    <link rel="stylesheet" href="style/signupSection.css">
-    <!-- This is for debug, will make this appear and disappear later -->
-    <link rel="stylesheet" href="style/debug.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="basic">
-        <h1 style="text-align: center; padding-top: 50px;">The Butterfield</h1>
-    </header>
-    <nav>
-        <ul class="navbar basic">
-            <li class="navItem"><a href="index.php">Home</a></li>
-            <li class="navItem"><a href="projectsList.php">Projects</a></li>
-            <li class="navItem"><a href="aboutMe.php">About Me</a></li>
-            <?php 
-                if(isset($_SESSION["member"])){
-                    echo '
-                    <li class="navItem account"><a href="includes/logout.inc.php">MEMBER</a></li>                    
-                    <li class="navItem account"><a href="includes/logout.inc.php">Logout</a></li>                    
-                    ';
-                }
-                else {
-                    echo '
-                    <li class="navItem account"><a href="login.php">Log In</a></li>
-                    <li class="navItem account"><a href="signup.php">Sign Up</a></li>
-                    ';
-                }
-                // <li class="navItem account"><a href="#login/sign up">Sign Up</a></li>
-            ?>
+<main>
+  <input type="checkbox" id="check">
+  <label for="check">
+    <i class="fas fa-bars" id="menuBtn"></i>
+    <i class="fas fa-times" id="menuCancel"></i>
+  </label>
+  <nav>
+    <header>The Butterfield</header>
+    <ul>
+      <li><a href="index.php"><i class="fas fa-qrcode"></i>Dashboard</a></li>
+      <li><a href="projectsList.php"><i class="fas fa-code"></i>Projects</a></li>
+      <li><a href="gameDev.php"><i class="fas fa-gamepad"></i>Game Dev</a></li>
+      <li><a href="aboutMe.php"><i class="fas fas fa-grin-beam"></i>About Me</a></li>
+      <li><a href="login.php"><i class="fas fa-id-badge"></i>Login</a></li>
+    </ul>
+  </nav>
 
-        </ul>
-    </nav>

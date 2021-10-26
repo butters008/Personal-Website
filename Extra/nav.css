@@ -1,4 +1,4 @@
-.navbarBasic 
+.navbar 
 {
     list-style-type: none;
     padding: 0;
@@ -8,7 +8,7 @@
 }
 
 .navItem {
-    margin: auto;
+    float: left;
 }
   
 .navItem a {
@@ -21,6 +21,10 @@
   
 .navItem a:hover {
     background-color: #111;
+}
+
+.account{
+    float: right;
 }
 
 .projectMenu{
