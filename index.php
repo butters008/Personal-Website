@@ -3,24 +3,50 @@
 require_once "helper/header.php";
 require_once "includes/dbh.inc.php";
 require_once "includes/functions.inc.php";
+$sql = "SELECT * FROM projects WHERE project_featured = 1;";
+$result = mysqli_query($conn, $sql);
+$project = mysqli_fetch_assoc($result);
+mysqli_free_result($result);
 ?>
 
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Program', 'Languages used in:'],
+      ['HTML',     5],
+      ['CSS',      3],
+      ['JavaScript',  1],
+      ['PHP', 2],
+      ['MySQL',    1]
+    ]);
 
-<section>
-  <div id="companyLogo">
-    <h2>The Butterfield LLC</h2>
-  </div>
-  <div class="timeTracker">
-    
-  </div>
-  <div class="project">
+    var options = {
+      title: 'Hours of Programming languages used',
+      pieHole: 0.4,
+    };
 
-  </div>
+    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+    chart.draw(data, options);
+  }
+</script>
 
-  <div class="blog">
+<div id="companyLogo">
+  <h2>The Butterfield LLC</h2>
+</div>
+<section id="project">  
 
-  </div>
-</section>
+  <div class="pieTracker">
+  <h2><strong>CURRENT PROJECT: <?php echo $project['project_name']; ?></strong></h2>  
+    <div id="donutchart"></div>
+  </div><!-- End of projectTracker -->
+</section><!-- END OF project  -->
+
+<div class="blog">
+
+</div>
 </main>
 
 <?php

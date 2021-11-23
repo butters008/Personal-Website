@@ -30,7 +30,6 @@
   
 ?>
 
-<<<<<<< Updated upstream
 <nav class="projectMenu">
     <ul class="menubar-nav">
 
@@ -51,8 +50,6 @@
         </li>
     </ul>        
 </nav>
-=======
->>>>>>> Stashed changes
 <main class="basic">
 <br>
 
