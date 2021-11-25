@@ -1,3 +1,8 @@
+/* Variables */
+:root{
+    --aboutMeFamily: url("Images/redneckME.jpg");
+}
+
 /* Basic body tags */
 *{
     margin: 0;
@@ -9,7 +14,6 @@
 
 section{
     height: 100%;
-    /* background-color: honeydew; */
     transition: all 1s;
 }
 
@@ -19,7 +23,7 @@ nav{
     top: 0;
     width: 250px;
     height:100%;
-    background: teal;
+    background: #042331;
     transition: all 1s;
 }
 
@@ -28,7 +32,7 @@ nav header{
     color: white;
     text-align: center;
     line-height: 70px;
-    background: rgb(6, 202, 202);
+    background: #042331;
     user-select: none;
 }
 
@@ -71,6 +75,7 @@ label #menuBtn{
     color: white;
     padding: 6px 12px;
     transition: all .5s;
+    position: fixed;
 }
 
 label #menuCancel{
@@ -78,10 +83,12 @@ label #menuCancel{
     left: -215px;
     top: 7px;
     font-size: 15px;
-    color: #0a5275;
+    color: #ffffff;
     padding: 4px 9px;
     opacity: 0;
-    transition: all .5s;
+    transition: all 1s;
+    position: fixed;
+    pointer-events: none;
 }
 
 #check:checked ~ nav{
@@ -97,6 +104,7 @@ label #menuCancel{
 #check:checked ~ label #menuCancel{
     left: 215px;
     opacity: 1;
+    pointer-events: visible;
 }
 
 #check:checked ~ section{
@@ -105,12 +113,15 @@ label #menuCancel{
 
 #companyLogo {
     text-align: center;
-    font-weight: 700;
-    font-size: 22px;
+    font-weight: 900;
+    font-size: 30px;
+    /* position: fixed; */
 }
 
 
 #project{
+    border-top: 1px solid black;
+    padding: 45px;
     width: 70%;
     margin: auto;
     height: 30%;
@@ -120,13 +131,12 @@ label #menuCancel{
 #project h2{
     text-align: center;
     /* padding: 20px; */
-    font-weight: 900;
-    font-size: larger;
+    font-weight: 700;
+    font-size: 25px;
 }
 
 .pieTracker{
-    border-top: 1px solid black;
-    padding: 45px;
+
     text-align: center;
 }
 
@@ -142,3 +152,141 @@ label #menuCancel{
     padding-top: 30px;
     padding-bottom: 40px;
 }
+
+.blog h2{
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.blog {
+    margin:auto;
+    border-top: 1px black solid;
+    width: 70%;
+
+}
+
+.blogLayout{
+    width: 70%;
+    margin: auto;
+}
+
+.blogPicture{
+    max-width: 250px;
+    max-height: 300px;
+    display: inline;
+    border: 5px black solid;
+    border-radius: 1em;
+}
+
+.blogTitle{
+    /* display: inline; */
+    padding: 20px;
+    font-size: 22px;
+    font-weight: 700;
+    /* margin: auto; */
+    text-align: center;
+    /* float: right; */
+    /* width:50% */
+}
+
+.blogText{
+    /* display: inline; */
+    padding: 20px;
+
+}
+
+/* ------------------------------------------------------- */
+/* About ME */
+#aboutMECards{
+    border-top: 1px solid black;
+    padding: 45px;
+    width: 70%;
+    margin: auto;
+    height: 30%;
+}
+#knowMoreMeTitleText{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 800;
+    padding-bottom: 40px;
+    margin-top: 10px;
+}
+
+.generalCardLayout{
+    width: 225px;
+    height: 600px;
+    display: inline-block;
+    /* Want to change this later! */
+    margin-left:20px;
+    border: 3px black solid;
+    border-radius: 5px;
+    /* display: table-cell; */
+    text-align: center;
+
+}
+
+.aboutMeFamily{
+    background-color: yellow;
+}
+
+.aboutMeProgramming{
+    background-color: green;
+}
+
+.aboutMeYouTube{
+    background-color: red;
+}
+
+.aboutMeWorking{
+    background-color: blue;
+}
+
+.aboutMeCardLayout{
+    /* table-layout: fixed; */
+    margin: auto;
+    justify-content: center; 
+
+}
+
+.generalCardLayout:hover{
+    background-color: orange;
+    width: 250px;
+    height: 650px;
+    transition: all 1s;
+    z-index: -1;
+    box-shadow:5px 5px 15px 15px rgba(0, 0, 0, 0.9);    
+}
+
+/* .aboutMeFamily:hover{
+    background-color: orange;
+    width: 250px;
+    height: 650px;
+    transition: all 1s;
+    z-index: -1;
+    box-shadow:5px 5px 15px 15px rgba(0, 0, 0, 0.9);
+ 
+}
+.aboutMeProgramming:hover{
+    background-color: orange;
+    width: 250px;
+    height: 650px;
+    transition: all 1s;
+    z-index: -1;
+    box-shadow:5px 5px 15px 15px rgba(0, 0, 0, 0.9);}
+.aboutMeYouTube:hover{
+    background-color: orange;
+    width: 250px;
+    height: 650px;
+    transition: all 1s;
+    z-index: -1;
+    box-shadow:5px 5px 15px 15px rgba(0, 0, 0, 0.9);}
+.aboutMeWorking:hover{
+    background-color: orange;
+    width: 250px;
+    height: 650px;
+    transition: all 1s;
+    z-index: -1;
+    box-shadow:5px 5px 15px 15px rgba(0, 0, 0, 0.9);} */

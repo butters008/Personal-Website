@@ -27,7 +27,7 @@
   <nav>
     <header>The Butterfield</header>
     <ul>
-      <li><a href="index.php"><i class="fas fa-qrcode"></i>Dashboard</a></li>
+      <li><a href="index.php"><i class="fas fa-qrcode"></i>Home</a></li>
       <li><a href="projectsList.php"><i class="fas fa-code"></i>Projects</a></li>
       <li><a href="gameDev.php"><i class="fas fa-gamepad"></i>Game Dev</a></li>
       <li><a href="aboutMe.php"><i class="fas fas fa-grin-beam"></i>About Me</a></li>
