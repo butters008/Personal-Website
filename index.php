@@ -22,8 +22,8 @@ if (!$result){
   function drawChart() {
     var data = google.visualization.arrayToDataTable([
       ['Program', 'Languages used in:'],
-      ['HTML',     5.5],
-      ['CSS',      3.5],
+      ['HTML',     7],
+      ['CSS',      6],
       ['JavaScript',  1],
       ['PHP', 2.5],
       ['MySQL',    1]
