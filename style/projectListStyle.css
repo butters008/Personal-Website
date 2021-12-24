@@ -16,3 +16,10 @@ thead th{
     padding: 20px;
     font-size: 20px;
 }
+
+.blogPicture{
+    height: 64px;
+    width: 64px;
+    border: none;
+    background-color: none;
+}
