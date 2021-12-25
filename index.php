@@ -9,10 +9,10 @@ $project = mysqli_fetch_assoc($result);
 mysqli_free_result($result);
 
 //Testing the query
-if (!$result){
-  echo "SQL Statement FAILED";
-  die("Query FAILED" . mysqli_error());
-}
+// if (!$result){
+//   echo "SQL Statement FAILED";
+//   die("Query FAILED" . mysqli_error());
+// }
 ?>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -22,10 +22,10 @@ if (!$result){
   function drawChart() {
     var data = google.visualization.arrayToDataTable([
       ['Program', 'Languages used in:'],
-      ['HTML',     7],
-      ['CSS',      6],
+      ['HTML',     8],
+      ['CSS',      7],
       ['JavaScript',  1],
-      ['PHP', 2.5],
+      ['PHP', 4],
       ['MySQL',    1]
     ]);
 
@@ -58,10 +58,10 @@ if (!$result){
   mysqli_free_result($resultBlog);
 
   //Testing the query
-if (!$result){
-  echo "BLOG SQL Statement FAILED";
-  die("BLOG Query FAILED" . mysqli_error());
-}
+// if (!$result){
+//   echo "BLOG SQL Statement FAILED";
+//   die("BLOG Query FAILED" . mysqli_error());
+// }
 ?>
 
   <div class="blogLayout">

@@ -1,48 +1,25 @@
 <?php 
-    include "helper/header.php";
-
-    //This is for connecting to the local DB
-    //Make the connection seperate later on
-    $conn = mysqli_connect("localhost", "root", "", "butterfield");
-
+require_once "helper/header.php";
+require_once "includes/dbh.inc.php";
+require_once "includes/functions.inc.php";
+$sql = "SELECT * FROM projects;";
+$result = mysqli_query($conn, $sql);
+$resultCheck = mysqli_num_rows($result);
 ?>
 
-<!-- This is for any debug message to appear on one area of the screen and trying to make this easier...I hope -->
-<section id="debug">
-  <?php 
-    //Testing the connection
-    if ($conn){
-      echo "connected";
-    }else{
-      echo "not connected";
-    }
-    
-    //Grabbing Data
-    $sql = "SELECT * FROM projects;";
-    $result = mysqli_query($conn, $sql);
-    $resultCheck = mysqli_num_rows($result);
-    $sql_moreInfo = "SELECT * FROM projects_more_info;";
-    $result2 = mysqli_query($conn, $sql);
-    // $resultCheck = mysqli_num_rows($result);
-
-    // mysqli_free_result($result);
-    // mysqli_close($conn);
-    
-    //Testing the query
-    if (!$result){
-      echo "SQL Statement FAILED";
-      // die("Query FAILED" . mysqli_error());
-    }
-  ?>
-</section>
+<div id="companyLogo">
+  <h2>The Butterfield LLC</h2>
+</div>
+<section id="project">  
 
 <main class="basic">
     <table class="projectList">
       <thead>
         <tr>
-          <th>Project Status:</th>
-          <th>Project Name:</th>
-          <th>Project Type:</th>
+          <th colspan="2">Project Icon:</th>
+          <th colspan="2">Project Status:</th>
+          <th colspan="2">Project Name:</th>
+          <th colspan="2">Project Type:</th>
           <!-- <th>Project Start Date:</th> -->
         </tr>
       </thead>
@@ -50,9 +27,10 @@
       <?php
       if ($resultCheck > 0){
         while ($project = mysqli_fetch_assoc($result)){
-          echo "<tr>";
-          echo '<td><a href="project_info.php?project_id='.$project["project_id"].'">'.$project["project_status"]."</td>";
-          echo '<td><a href="project_info.php?project_id='.$project["project_id"].'">'.$project["project_name"].'</td>';
+          echo '<tr class="projectRow">';
+          echo '<td colspan="2" class="projectDataPic"><img class="blogPicture" src="Images/'.$project['project_type_pic'].'"></td>';
+          echo '<td colspan="2" class="projectData"><a href="project_info.php?project_id='.$project["project_id"].'">'.$project["project_status"]."</td>";
+          echo '<td colspan="2" class="projectData"><a href="project_info.php?project_id='.$project["project_id"].'">'.$project["project_name"].'</td>';
           echo "<td>".$project["project_type"]."</td>";
           // echo "<td>".$project["project_start"]."</td>";
           echo "</tr>";
@@ -64,9 +42,6 @@
 
 
 </main>
-
-
-
 
 <?php
   include "helper/footer.php";
