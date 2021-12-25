@@ -22,10 +22,10 @@ mysqli_free_result($result);
   function drawChart() {
     var data = google.visualization.arrayToDataTable([
       ['Program', 'Languages used in:'],
-      ['HTML',     7],
-      ['CSS',      6],
+      ['HTML',     8],
+      ['CSS',      7],
       ['JavaScript',  1],
-      ['PHP', 2.5],
+      ['PHP', 4],
       ['MySQL',    1]
     ]);
 
