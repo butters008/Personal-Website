@@ -39,7 +39,7 @@ if(isset($_GET['project_id'])){
  so that I do not have to change multiple pages (I hope).
 Also, having a subscribe button will be something that everyone can see but diabled if I am logged in as admin-->
 <img class="blogPicture" src="Images/<?php echo $project['project_type_pic']; ?>" alt="Web Development">
-<h3><?php echo $project['project_type'] ?></h3>
+<h3 class="projectTypeText"><?php echo $project['project_type'] ?></h3>
 
 <div class="currentProjectOutline">
   <!-- Hard coded test values, will be loading this in dynamically -->

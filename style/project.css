@@ -3,3 +3,6 @@
     margin: auto;
     padding-top: 175px;
 }
+.projectTypeText{
+    block-size: none;
+}
