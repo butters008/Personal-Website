@@ -33,62 +33,80 @@ if(isset($_GET['project_id'])){
 }
 ?>
 
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Program', 'Languages used in:'],
+      ['HTML',     9],
+      ['CSS',      8],
+      ['JavaScript',  1],
+      ['PHP', 5],
+      ['MySQL',    1]
+    ]);
+
+    var options = {
+      title: 'Hours of Programming languages used',
+      pieHole: 0.4,
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+    chart.draw(data, options);
+  }
+</script>
+
+<div id="companyLogo">
+  <h2>The Butterfield LLC</h2>
+</div>
+
 <main class="basic">
 <br>
 <!-- Make the if(isset($_SESSION["member"])) into if(isset($_SESSION["admin"])),
  so that I do not have to change multiple pages (I hope).
 Also, having a subscribe button will be something that everyone can see but diabled if I am logged in as admin-->
-<img class="blogPicture" src="Images/<?php echo $project['project_type_pic']; ?>" alt="Web Development">
-<h3 class="projectTypeText"><?php echo $project['project_type'] ?></h3>
-
-<div class="currentProjectOutline">
-  <!-- Hard coded test values, will be loading this in dynamically -->
-<!-- TODO: Get images to load dynamically -->
-  <h3><strong>Project Name:</strong> <?php echo $project['project_name']; ?></h3>
-  <!-- This was taken from tutorial previously mentioned -->
-  <!-- Hard coding this in, will probably have to re-work this in the future -->
-  <br>
-  <label>Percentage of Completion: <?php echo $project["project_percentage"]."%";?></label> 
-  <br>
-  <div class="myProgress">
-    <div class="myBar" style="width: <?php echo $project["project_percentage"]; ?>%;"></div>
-  </div>
-  <br>
-  <br>
-  <table>
-    <tr>
-      <td>Project Type:</td>
-      <td><strong><?php echo $project["project_type"]?></strong></td>
-    </tr>
-    <tr>
-      <td>Project Start:</td>
-      <td><strong><?php echo $project_moreInfo["project_start"]?></strong></td>
-    </tr>
-  </table>
-  
-  <p><strong>Short Discription:</strong><br><br>
-    <?php echo $project_moreInfo["project_shortInfo"]; ?>
-  </p>
-  <br>
+<div class="projectHeader">
+  <img class="blogPictureProject" src="Images/<?php echo $project['project_type_pic']; ?>" alt="Web Development">
+  <h3 class="projectTypeText">&emsp;<?php echo $project['project_type']; ?></h3>
 </div>
-<br><br>
 
-  <!-- Thinking about doing a table in here, to make use to the entire width -->
-  <!-- Or make a UL list that can go vertically instead of horizantially -->
+<section id="project">  
 
+  <div class="pieTracker">
+  <h2><strong>PROJECT NAME: <?php echo $project['project_name']; ?></strong></h2>  
+    <div id="donutchart"></div>
+  </div><!-- End of projectTracker -->
+</section><!-- END OF project  -->
 
+<div class="blogLayoutUpdateText">
+  <h2>Project Summary</h2>
+</div>
+<div class="projectSummary">
+  <?php echo $project_moreInfo['project_longInfo'];?>
+</div>
 
-  <h2 style="text-align: center; margin-bottom: none;">Recent Project Update</h2>
-  <div class="currentProjectBlog">
-
+<br>
+<div class="blogLayoutUpdateText">
+    <h2>All Project Updates </h2>  
+</div>
 <?php
     if ($project_blog_rows > 0){
-        while ($project_blog = mysqli_fetch_assoc($result3)){
-           echo '
-           <h3 id="blogTitle"'.$project_blog["blog_title"].'</h3>
-           <h5>'.$project_blog["blog_date"].'</h5>
-           <p>'.$project_blog["blog_text"];'.</p>';
-        echo "Working!";        
+        while ($project_blog = mysqli_fetch_assoc($result3)){ 
+?>
+  <div class="blogLayout">
+
+    <p class="blogTitle"><?php echo $project_blog["blog_title"]; echo "&emsp;".$project_blog["blog_date"]; ?></p>
+    <table>
+      <tr>
+        <td colspan="3" rowspan="3"><img class="blogPicture" src="Images/<?php echo $project_blog['blog_image'];?>" alt="<?php echo $project_blog['blog_image'];?>"></td>
+        <td colspan=".5" rowspan=".5"><p class="blogText"><?php echo $project_blog["blog_text"]; ?></p><br></td>
+      </tr>
+      <tr>
+        <td></td></tr>
+    </table>
+  </div>
+<?php        
         }
       }
 ?>

@@ -1,8 +1,37 @@
 .basic{
     width: 70%;
     margin: auto;
-    padding-top: 175px;
+    /* padding-top: 175px; */
+
 }
 .projectTypeText{
-    block-size: none;
+    display: inline;
+    color: white;
+}
+
+.blogPictureProject{
+    background-color: black;
+    height: 64px;
+    width: 64px;
+    border: none;
+    vertical-align: middle;
+}
+
+.projectHeader{
+    background-color: black;
+    font-size: 30px;
+    padding: 5px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.blogLayoutUpdateText{
+    text-align: center;
+    font-size: 25px bold;
+    border-bottom: 5px solid black;
+    margin-top: 15px;
+}
+.projectSummary{
+    text-align: center;
+    padding: 15px;
 }
