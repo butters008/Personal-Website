@@ -42,6 +42,7 @@ $resultCheck = mysqli_num_rows($result);
 
 
 </main>
+</section>
 
 <?php
   include "helper/footer.php";

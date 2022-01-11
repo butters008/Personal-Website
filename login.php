@@ -1,7 +1,13 @@
 <?php 
-    include "helper/header.php";
+require_once "helper/header.php";
+require_once "includes/dbh.inc.php";
+require_once "includes/functions.inc.php";
 ?>
 
+<div id="companyLogo">
+  <h2>The Butterfield LLC</h2>
+</div>
+<section id="project">
 <main class="basic">
   <br>
     <h2 style="text-align: center;">Login</h2>
@@ -18,6 +24,7 @@
       </div>
     </div>
 </main>
+</section>
 
 <?php
   if(isset($_GET["error"])){

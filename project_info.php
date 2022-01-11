@@ -6,19 +6,26 @@ require_once "includes/functions.inc.php";
 //Setting up the information to showcase the project on the webpage
 if(isset($_GET['project_id'])){
   $id = mysqli_real_escape_string($conn, $_GET['project_id']);
+  
   $sql = "SELECT * FROM projects WHERE project_id = $id;";
   $result = mysqli_query($conn, $sql);
   $project = mysqli_fetch_assoc($result);
   mysqli_free_result($result);
-  $progressBar = $project["project_percentage"];
+
   $sql_otherTable = "SELECT * FROM projects_more_info WHERE project_id = $id;";
   $result = mysqli_query($conn, $sql_otherTable);
   $project_moreInfo = mysqli_fetch_assoc($result);
   mysqli_free_result($result);
+  
   $sql_blog = "SELECT * FROM projects_blog WHERE project_id = $id ORDER BY blog_id DESC;";
   $result3 = mysqli_query($conn, $sql_blog);
-  // $project_blog = mysqli_fetch_assoc($result);
   $project_blog_rows = mysqli_num_rows($result3);
+  mysqli_free_result($result3);
+
+  // $sql_projInfo = "SELECT * FROM projects_Info WHERE project_id = $id ORDER BY infoID DESC;";
+  // $result3 = mysqli_query($conn, $sql_blog);
+  // $project_blog_rows = mysqli_num_rows($result3);
+  // mysqli_free_result($result);
 
   //Checking to see if the user is logged in or not
   if (isset($_SESSION["userID"])){
