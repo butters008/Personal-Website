@@ -115,7 +115,5 @@ else{
 </main>
 
 <?php
-//Closing the connection to the DB
-mysqli_close($conn);
 include "../helper/footer.php";
 ?>

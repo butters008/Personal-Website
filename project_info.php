@@ -17,11 +17,6 @@ if(isset($_GET['project_id'])){
   $project_moreInfo = mysqli_fetch_assoc($result);
   mysqli_free_result($result);
   
-  $sql_blog = "SELECT * FROM projects_blog WHERE project_id = $id ORDER BY blog_id DESC;";
-  $result3 = mysqli_query($conn, $sql_blog);
-  $project_blog_rows = mysqli_num_rows($result3);
-  mysqli_free_result($result3);
-
   // $sql_projInfo = "SELECT * FROM projects_Info WHERE project_id = $id ORDER BY infoID DESC;";
   // $result3 = mysqli_query($conn, $sql_blog);
   // $project_blog_rows = mysqli_num_rows($result3);
@@ -46,16 +41,16 @@ if(isset($_GET['project_id'])){
   google.charts.setOnLoadCallback(drawChart);
   function drawChart() {
     var data = google.visualization.arrayToDataTable([
-      ['Program', 'Languages used in:'],
+      ['Program', 'Technologies used:'],
       ['HTML',     9],
       ['CSS',      8],
       ['JavaScript',  1],
-      ['PHP', 5],
-      ['MySQL',    1]
+      ['PHP', 5.5],
+      ['MySQL',    1.5]
     ]);
 
     var options = {
-      title: 'Hours of Programming languages used',
+      title: 'Hours of all tehcnologies used',
       pieHole: 0.4,
     };
 
@@ -98,32 +93,36 @@ Also, having a subscribe button will be something that everyone can see but diab
     <h2>All Project Updates </h2>  
 </div>
 <?php
-    if ($project_blog_rows > 0){
-        while ($project_blog = mysqli_fetch_assoc($result3)){ 
-?>
-  <div class="blogLayout">
+$sql_blog = "SELECT * FROM projects_blog WHERE project_id = $id ORDER BY blog_id DESC;";
+$result3 = mysqli_query($conn, $sql_blog);
+$project_blog_rows = mysqli_num_rows($result3);
 
-    <p class="blogTitle"><?php echo $project_blog["blog_title"]; echo "&emsp;".$project_blog["blog_date"]; ?></p>
-    <table>
-      <tr>
-        <td colspan="3" rowspan="3"><img class="blogPicture" src="Images/<?php echo $project_blog['blog_image'];?>" alt="<?php echo $project_blog['blog_image'];?>"></td>
-        <td colspan=".5" rowspan=".5"><p class="blogText"><?php echo $project_blog["blog_text"]; ?></p><br></td>
-      </tr>
-      <tr>
-        <td></td></tr>
-    </table>
-  </div>
+if ($project_blog_rows > 0){
+    while ($project_blog = mysqli_fetch_assoc($result3)){ 
+      // echo "hello";
+?>
+<div class="blogLayout">
+
+<p class="blogTitle"><?php echo $project_blog["blog_title"]; echo "&emsp;".$project_blog["blog_date"]; ?></p>
+<table>
+  <tr>
+    <td colspan="3" rowspan="3"><img class="blogPicture" src="Images/<?php echo $project_blog['blog_image'];?>" alt="<?php echo $project_blog['blog_image'];?>"></td>
+    <td colspan=".5" rowspan=".5"><p class="blogText"><?php echo $project_blog["blog_text"]; ?></p><br></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</table>
+</div>  
 <?php        
-        }
-      }
+  }
+}
 ?>
   </div>
   <br>
 </main>
 
 <?php
-  //Closing the connection to the DB
-  mysqli_close($conn);
   include "helper/footer.php";
 ?>
 
