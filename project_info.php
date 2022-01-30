@@ -16,7 +16,17 @@ if(isset($_GET['project_id'])){
   $result = mysqli_query($conn, $sql_otherTable);
   $project_moreInfo = mysqli_fetch_assoc($result);
   mysqli_free_result($result);
-  
+
+  $sql_blog = "SELECT * FROM projects_blog WHERE project_id = $id ORDER BY blog_id DESC;";
+  $result3 = mysqli_query($conn, $sql_blog);
+  $project_blog_rows = mysqli_num_rows($result3);
+
+  //Trying to get piechart read from a DB
+  $sql_construction = "SELECT * FROM projects_construction WHERE project_id = $id;";
+  $result_cons = mysqli_query($conn, $sql_construction);
+  $project_moreInfo = mysqli_fetch_assoc($result_cons);
+  // mysqli_free_result($result);
+
   // $sql_projInfo = "SELECT * FROM projects_Info WHERE project_id = $id ORDER BY infoID DESC;";
   // $result3 = mysqli_query($conn, $sql_blog);
   // $project_blog_rows = mysqli_num_rows($result3);
@@ -46,7 +56,7 @@ if(isset($_GET['project_id'])){
       ['CSS',      8],
       ['JavaScript',  1],
       ['PHP', 5.5],
-      ['MySQL',    1.5]
+      ['MySQL',    2]
     ]);
 
     var options = {
@@ -93,10 +103,6 @@ Also, having a subscribe button will be something that everyone can see but diab
     <h2>All Project Updates </h2>  
 </div>
 <?php
-$sql_blog = "SELECT * FROM projects_blog WHERE project_id = $id ORDER BY blog_id DESC;";
-$result3 = mysqli_query($conn, $sql_blog);
-$project_blog_rows = mysqli_num_rows($result3);
-
 if ($project_blog_rows > 0){
     while ($project_blog = mysqli_fetch_assoc($result3)){ 
       // echo "hello";
