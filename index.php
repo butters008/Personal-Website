@@ -3,16 +3,16 @@
 require_once "helper/header.php";
 require_once "includes/dbh.inc.php";
 require_once "includes/functions.inc.php";
-$sql = "SELECT * FROM projects WHERE project_featured = 1;";
+$sql = "SELECT * FROM projects WHERE id = 1;";
 $result = mysqli_query($conn, $sql);
 $project = mysqli_fetch_assoc($result);
 mysqli_free_result($result);
 
 //Testing the query
-// if (!$result){
-//   echo "SQL Statement FAILED";
-//   die("Query FAILED" . mysqli_error());
-// }
+if (!$result){
+  echo "SQL Statement FAILED";
+  die("Query FAILED" . mysqli_error());
+}
 ?>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
